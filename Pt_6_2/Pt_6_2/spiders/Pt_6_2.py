@@ -3,9 +3,11 @@ import scrapy
 
 class SteamSpider(scrapy.Spider):
     name = 'steam_spider'
+
     url = 'https://store.steampowered.com/search/?category1=998&filter=topsellers&ndl=1&page=%s'
     page = 1
     start_urls = [url % page]
+
     parsed_games = 0
 
     def parse(self, response, **kwargs):
